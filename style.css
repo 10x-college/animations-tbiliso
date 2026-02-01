@@ -89,13 +89,16 @@ main{
     grid-template-rows: repeat(1fr, 2);
     
 }
-.nav-div{
-    grid-area: 1 / 1 / 3/ 3;
+.fex-col{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+.nav-div{
+    grid-area: 1 / 1 / 3/ 3;
     padding: 80px;
     gap: 30px;
-    justify-content: center;
+    
     h1{
         
         width: 638px;
@@ -133,10 +136,26 @@ ul li button{
     line-height: 150%;
     color: #FFFFFF;
 }
-.sect-p{
+h2{
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 150%;
+    color: #FFFFFF;
+}
+
+h3{
+    font-family: Roboto,sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 150%;
+    color: #FFFFFF;
+}
+p{
     color: #81807E;
     font-weight: 400;
     font-size: 18px;
+    line-height: 150%;
+    font-family: Roboto,sans-serif;
 }
 
 .stat-child-1{
@@ -160,8 +179,38 @@ ul li button{
     justify-content: center;
 }
 
-.trend-grid{
+.grid-sec{
     display: grid;
     grid-template-columns: repeat(1fr, 3);
     grid-template-rows: repeat(1fr, 3);
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.trend-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px;
+}
+.card1{
+    grid-area: 1/1/2/4;
+}
+.card2{
+    grid-area: 2/1/3/2;
+}
+.card3{
+    grid-area: 2/2/3/3;
+}
+.card4{
+    grid-area: 2/3/3/4;
+}
+.card5{
+    grid-area: 3/1/4/2;
+}
+.card6{
+    grid-area: 3/2/4/3;
+}
+.card7{
+    grid-area: 3/3/4/4;
 }
