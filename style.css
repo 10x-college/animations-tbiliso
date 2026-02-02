@@ -5,6 +5,7 @@
 }
 body{
     background-color: black;
+    font-family: 'Roboto', sans-serif;
     width: 1920px;
     display: flex;
     flex-direction: column;
@@ -12,6 +13,7 @@ body{
     align-items: center;
 }
 header{
+    font-family: 'Roboto Mono', sans-serif;
     width: 1596px;
     height: 123px;
     display: flex;
@@ -38,6 +40,10 @@ header{
         background-color: black;
         color: white;
         padding: 18px 30px;
+        transition: background-color 0.5s ease-in 0.2s;
+    }
+    button:hover{
+        background-color: grey;
     }
     .hd-prod{
         color: #B3B3B2;
@@ -70,14 +76,47 @@ main{
     height: 63px;
     padding: 18px 24px;
     background-color: #1F1F1F;
-    border:1px dashed #AE9B84;
+    /* border:1px dashed #AE9B84; */
     border-radius: 12px;
     color: #FFFFFF;
     display: flex;
     gap: 5px;
     align-items: center;
     justify-content: center;
+    /* ანიმაციისთვის ვამატებთ */
+    position: relative;
+    border: none;
+    /* ჩარჩო გარეთ თუ გავა დაიმალოს */
+    overflow: hidden;
+    z-index: 1; /* ტექსტი რომ ზემოდან მოექცეს */
 }
+
+.shop-btn::before {
+    content: "";
+    position: absolute;
+    width: 200%; /* ღილაკზე ბევრად დიდი, რომ ტრიალისას კუთხეები არ გამოჩნდეს */
+    height: 200%;
+    background: conic-gradient(transparent, #AE9B84, transparent 30%);
+    animation: rotate-border 4s linear infinite;
+    z-index: -2; /* ღილაკის უკან მოექცეს */
+}
+
+.shop-btn::after {
+    content: "";
+    position: absolute;
+    inset: 2px; /* ბორდერის სისქე (დატოვებს 2 პიქსელს) */
+    background: #1F1F1F; /* იგივე ფერი, რაც ღილაკის ფონია */
+    border-radius: 11px;
+    z-index: -1; /* მოექცეს მბრუნავ ხაზსა და ტექსტს შორის */
+}
+@keyframes rotate-border{
+    from{
+        transform: rotate(0deg);}
+    to{
+        transform: rotate(360deg);
+        }
+    }
+
 .shop-arrow{
     width: 24px;
     height: 24px;
@@ -192,6 +231,7 @@ p{
     flex-direction: column;
     align-items: center;
     padding: 60px;
+    gap: 30px;
 }
 .card1{
     grid-area: 1/1/2/4;
@@ -212,5 +252,84 @@ p{
     grid-area: 3/2/4/3;
 }
 .card7{
+    grid-area: 3/3/4/4;
+}
+
+.coll-card{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    padding: 30px;
+    gap: 30px;
+    border: 2px dashed #262626;
+    /* border:1px dashed #404040; */
+    width: 472px;
+    /* height: 386px; */
+    border-radius: 50px 0 0 0 ;
+}
+
+.coll-btn{
+    background-color: #1F1F1F;
+    
+    border-radius: 12px;
+    padding: 18px 24px;
+    width: 159px;
+    height: 63px;
+    color: #FFFFFF;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.flex-align-btn{
+    justify-content: space-between;
+    align-items: center;
+    width: 472px;
+}
+.coll-card h2 {
+    font-family: Roboto Mono, sans-serif;
+    font-size: 24px;
+}
+.point{
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #4D4D4D;
+}
+span{
+    font-family: Roboto Mono, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    color: #CCCCCC;
+}
+.coll-price{
+    gap: 10px;
+}
+.price-line{
+    align-items: center;
+    gap: 5px;
+}
+
+.coll-card1{
+    grid-area: 1/1/2/4;
+}
+.coll-card2{
+    grid-area: 2/1/3/2;
+}
+.coll-card3{
+    grid-area: 2/2/3/3;
+}
+.coll-card4{
+    grid-area: 2/3/3/4;
+}
+.coll-card5{
+    grid-area: 3/1/4/2;
+}
+.coll-card6{
+    grid-area: 3/2/4/3;
+}
+.coll-card7{
     grid-area: 3/3/4/4;
 }
