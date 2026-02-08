@@ -99,7 +99,7 @@ main{
     width: 200%; /* ღილაკზე ბევრად დიდი, რომ ტრიალისას კუთხეები არ გამოჩნდეს */
     height: 200%;
     background: conic-gradient(transparent, #AE9B84, transparent 30%);
-    animation: rotate-border 4s linear infinite;
+    animation: rotate 4s linear infinite;
     z-index: -2; /* ღილაკის უკან მოექცეს */
 }
 
@@ -111,7 +111,7 @@ main{
     border-radius: 11px;
     z-index: -1; /* მოექცეს მბრუნავ ხაზსა და ტექსტს შორის */
 }
-@keyframes rotate-border{
+@keyframes rotate{
     from{
         transform: rotate(0deg);}
     to{
@@ -243,7 +243,7 @@ p{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* padding: 60px; */
+    padding: 60px;
     gap: 30px;
     border: 2px dashed #262626;
 }
@@ -278,11 +278,12 @@ p{
     flex-direction: column;
     /* align-items: center; */
     justify-content: center;
-    padding: 30px;
+    /* padding: 30px; */
     gap: 30px;
     border: 2px dashed #262626;
+    padding: 30px;
     /* border:1px dashed #404040; */
-    width: 472px;
+    /* width: 472px; */
     /* height: 386px; */
     /* border-radius: 50px 0 0 0 ; */
     
@@ -298,7 +299,7 @@ p{
     background-color: #1F1F1F;
     
     border-radius: 12px;
-    padding: 18px 24px;
+    /* padding: 18px 24px; */
     width: 159px;
     height: 63px;
     color: #FFFFFF;
@@ -370,11 +371,13 @@ span{
 
 }
 
+
+
 .faq-card1{
     grid-area: 1/1/2/4;
     justify-content: space-between;
     /* height: 386px; */
-    width: 100%;
+    /* width: 100%; */
     padding-left: 10px;
 }
 .faq-card2{
@@ -459,6 +462,11 @@ footer{
     background-color: #1A1A1A;
     width: 478.67px;
     height: 63px;
+    background-image: url(./assets/InputArrowIcon.png);
+    background-repeat: no-repeat;
+    background-position:right 20px center;
+    background-size: 18px;
+    
 }
 
 .footer-footer {
@@ -472,4 +480,24 @@ footer{
         line-height: 150%;
         color: #676665;
     }
+}
+
+@keyframes faq {
+    25%{
+        color: rgb(132, 247, 132)
+    }
+    50%{
+        color: rgb(104, 246, 104)
+    }
+    75%{
+        color: rgb(60, 165, 60)
+        
+    }
+    100%{
+        color: rgb(23, 72, 23)
+    }
+}
+
+.common-card h3:hover{
+    animation: faq 10s linear infinite;
 }
