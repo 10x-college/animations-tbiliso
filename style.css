@@ -483,7 +483,7 @@ footer {
     padding: 100px 0;
 }
 
-.footer-header-icons  a{
+.footer-header-icons a {
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -511,6 +511,12 @@ footer {
     }
 }
 
+
+.scale-div h2:hover {
+        transition: transform 0.5 ease;
+        transform: scale(1.1);
+    }
+    
 .footer-main-sec-list {
     display: flex;
     gap: 38px;
@@ -574,17 +580,39 @@ footer {
     animation: faq 10s linear infinite;
 }
 
+
+
+
 @keyframes jump {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 .footer-header-icons a {
-    display: inline-block; /* აუცილებელია, რომ transform-მა იმუშაოს */
+    display: inline-block;
+    /* აუცილებელია, რომ transform-მა იმუშაოს */
     animation: jump 2s infinite;
 }
 
-.footer-header-icons a:nth-child(1) { animation-delay: 0s; }
-.footer-header-icons a:nth-child(2) { animation-delay: 0.5s; }
-.footer-header-icons a:nth-child(3) { animation-delay: 1s; }
-.footer-header-icons a:nth-child(4) { animation-delay: 1.5s; }
+.footer-header-icons a:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.footer-header-icons a:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.footer-header-icons a:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.footer-header-icons a:nth-child(4) {
+    animation-delay: 1.5s;
+}
